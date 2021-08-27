@@ -1,0 +1,107 @@
+.index-main{
+   display: grid;
+   grid-template-columns: 700px;
+   grid-template-rows: auto auto 1fr;
+   justify-content: center;
+   gap: 2rem;
+
+   height: 100vh;
+   padding: 3rem;
+
+   .index-main-form{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+
+      .input-text{
+         padding: .5rem 0;
+         font-size: 1rem;
+         background: none;
+         border: none;
+         border-bottom: 1px solid #cfd6df;
+         color: #7d8790;
+         &::placeholder{
+            color: #4f5e74;
+            opacity: 1;
+         }
+         &:focus{
+            color: #1b1b1b;
+         }
+      }
+      
+   }
+
+   .index-main-table{
+      text-align: left;
+      border-collapse: separate;
+      border-spacing: 0px .5rem;
+      th{
+         padding: 0rem .5rem;
+         color: #bfc5d2;
+         font-size: .9rem;
+      }
+      .body-row{
+         border-radius: 50px;
+         $color: rgba(0, 0, 0, 0.05);
+         td{
+            border-top: 1px solid $color;
+            border-bottom: 1px solid $color;
+            padding: 1rem .5rem;
+            background: white;
+            color: #43454b;
+            letter-spacing: 0.03rem;
+            font-size: .9rem;
+            text-transform: capitalize;
+         }
+         td:first-child{
+            font-size: .8rem;
+            font-weight: 600;
+            color: #686b72;
+            padding-left: 1rem;
+            border-left: 1px solid $color;
+            border-top-left-radius: .5rem;
+            border-bottom-left-radius: .5rem;
+         }
+         td:last-child{
+            padding-right: 1rem;
+            border-right: 1px solid $color;
+            border-top-right-radius: .5rem;
+            border-bottom-right-radius: .5rem;
+         }
+      }
+      .hidden-div{
+         display: none;
+      }
+   }
+
+   .btn{
+      $horizontal: 3rem;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 0.003rem;
+      padding-left: $horizontal;
+      padding-right: $horizontal;
+      background: #2e5bff;
+      border: none;
+      border-radius: .5rem;
+      color: #eaece1;
+      cursor: pointer;
+   }
+   .btn-cancel{
+      background: rgb(243, 84, 84);
+   }
+   .btn-container{
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+   }
+   .table-btn{
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      z-index: 2;
+   }
+}

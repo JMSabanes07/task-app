@@ -1,0 +1,17 @@
+//*other
+*{
+   padding: 0;
+   margin: 0;
+   outline: none;
+   box-sizing: border-box;
+   font-family: 'Open Sans', sans-serif;
+   letter-spacing: 0.05rem;
+}
+body{
+   background: #f4f6fc;
+}
+
+//*pages
+@import 'pages/index.scss';
+
+//*components
