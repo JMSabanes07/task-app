@@ -4,8 +4,6 @@ import Head from 'next/head'
 
 import Table from '../components/table'
 
-//TODO cambiar el input de controlled a uncontrolled
-
 export default function Home() {
 	const [task, setTask] = useState('');
 	const [idTask, setIdTask] = useState('');
@@ -24,8 +22,9 @@ export default function Home() {
 		inputRef.current.focus()
 	}
 
-	const handleCancelEdit = async (e) => {
+	const handleCancelEdit = () => {
 		setEditMode(false)
+		setIdTask('')
 		setTask('')
 	}
 
