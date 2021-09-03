@@ -6,5 +6,6 @@ module.exports = {
     'MYSQL_DATABASE': 'basedromed',
     'MYSQL_USER': 'root',
     'MYSQL_PASSWORD': '',
+    'RE_CAPTCHA_KEY': '6LftmzwcAAAAAFNrIXYnAdNht-YiWKveMnDPpr3x',
   },
 }

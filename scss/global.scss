@@ -10,8 +10,17 @@
 body{
    background: #f4f6fc;
 }
+input{
+   &:-webkit-autofill,
+   &:-webkit-autofill:hover, 
+   &:-webkit-autofill:focus, 
+   &:-webkit-autofill:active{
+      filter: none !important;
+   }
+}
 
 //*pages
-@import 'pages/index.scss';
+@import 'pages/index';
+@import 'pages/login';
 
 //*components

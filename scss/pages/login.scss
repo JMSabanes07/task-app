@@ -1,0 +1,117 @@
+.login-page{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+
+   width: 100%;
+   height: 100vh;
+
+   .title{
+      color: #2e5bff;
+      font-size: 2rem;
+      letter-spacing: 0.01rem;
+      width: 400px;
+   }
+   .cover-page{
+      position: relative;
+      z-index: 0;
+      img{
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   .login{
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 3rem;
+
+      form{
+         display: grid;
+
+         width: 400px;
+         .input-txt{
+            padding: .8rem 1rem;
+            letter-spacing:0.02rem;
+            font-size: 0.85rem;
+         }
+         .pass-container{
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            .eye{
+               position: absolute;
+               margin-right: 1rem;
+               width: 20px;
+               height: 20px;
+               right: 0;
+               cursor: pointer;
+               z-index: 1;
+            }
+            .input-txt{
+               width: 100%;
+            }
+         }
+         .label{
+            display: grid;
+            gap: .3rem;
+
+            margin-bottom: .5rem;
+            margin-top: 1rem;
+            &:first-of-type{
+               margin-top: 0;
+            }
+            &:last-of-type{
+               margin-bottom: 1rem;
+            }
+            span{
+               font-size: 0.95rem;
+               font-weight: 600;
+               letter-spacing: 0.03rem;
+               color: #63666d;
+            }
+         }
+         .label-checkbox{
+            display: flex;
+            align-items: center;
+
+            span{
+               cursor: pointer;
+               line-height: 1;
+            }
+            input[type="checkbox"]{
+               cursor: pointer;
+            }
+            user-select: none;
+         }
+         .btn-container{
+            padding-top: 1rem;
+            .btn{
+               font-size: .9rem;
+               font-weight: 600;
+               letter-spacing: 0.01rem;
+               color: white;
+               background: #2e5bff;
+               border: none;
+               padding: 1rem 2rem;
+               cursor: pointer;
+            }
+         }
+      }
+      .forgotten-pass{
+         width: 400px;
+         span{
+            margin-right: 1rem;
+            font-size: .9rem;
+            font-weight: 600;
+            color: #63666d;
+         }
+         a{
+            color: #2e5bff;
+            font-size: .9rem;
+         }
+      }
+   }
+}
