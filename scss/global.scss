@@ -21,6 +21,8 @@ input{
 
 //*pages
 @import 'pages/index';
-@import 'pages/login';
+// @import 'pages/login';
+@import 'pages/clients';
 
 //*components
+@import 'pages/components/input';

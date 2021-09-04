@@ -30,7 +30,7 @@ export default function Home() {
 
 	const handleDelete = async (e) => {
 		const id = e.target.getAttribute('data-key')
-		const res = await fetch(`/api/tasks/${id}`, {
+		const res = await fetch(`/api/clientes/${id}`, {
 			method: "DELETE",
 		})
 		setData(await res.json())
@@ -43,7 +43,7 @@ export default function Home() {
 		e.preventDefault();
 
 		if(editMode){
-			const res = await fetch(`/api/tasks/${idTask}`, {
+			const res = await fetch(`/api/clientes/${idTask}`, {
 				method: "PUT",
 				body: JSON.stringify({
 					task
@@ -56,7 +56,7 @@ export default function Home() {
 			setIdTask('')
 			handleCancelEdit()
 		}else{
-			const res = await fetch("/api/tasks", {
+			const res = await fetch("/api/clientes", {
 				method: 'POST',
 				body: JSON.stringify({
 					task
@@ -71,7 +71,7 @@ export default function Home() {
 	}
 	
 	useSWR("tasks", async () => {
-		const res = await fetch("/api/tasks")
+		const res = await fetch("/api/clientes")
 		const data = await res.json()
 		setData(data)
 	})

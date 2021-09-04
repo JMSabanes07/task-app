@@ -55,7 +55,7 @@ const Login = () => {
    }
 
    return(
-      <div className="login-page">
+      <main className="login-page">
          <section className="cover-page">
             <Image src="/1920x1080compressed.png" alt="background" layout="fill" quality="100"/>
          </section>
@@ -92,7 +92,7 @@ const Login = () => {
                <a href="#">Recuperar Contraseña</a>
             </div>
          </section>
-      </div>
+      </main>
    )
 }
 
