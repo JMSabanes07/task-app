@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { FormCtx, FormCtxComponent } from "./context/ctx"
 
-export const Form = ({children}) => {
+export const Form = ({children, defaultData}) => {
    return(
-      <FormCtxComponent>
+      <FormCtxComponent defaultData={defaultData}>
          <form className="form">
             {children}
          </form>
@@ -11,14 +11,10 @@ export const Form = ({children}) => {
    )
 }
 
-export const InputGroup = ({ children }) => {
-
-   const handleChildren = () => {
-      return '1fr '.repeat(children.length)
-   }
+export const InputGroup = ({ children, cols }) => {
 
    return (
-      <div className="input-group" style={{ gridTemplateColumns: handleChildren()}}>
+      <div className="input-group" style={{ gridTemplateColumns: cols}}>
          {children}
       </div>
    )
@@ -26,10 +22,14 @@ export const InputGroup = ({ children }) => {
 
 export const Input = (props) => {
    const { formData, handleInput } = useContext(FormCtx)
-   const { label, id, className, type, value, placeholder, checked, disabled, maxLength } = props.data
+   let { label, id, className, type, value, placeholder, checked, disabled, disabledBy, maxLength } = props.data
+
+   if (disabledBy && !formData[disabledBy]){
+      disabled = true
+   }
 
    return (
-      <div className="container">
+      <div className={`container ${type === 'checkbox' ? 'checkbox' : ''}`}>
          <label className="label" htmlFor={id}>
             <span>{label}</span>
          </label>
@@ -58,7 +58,8 @@ export const Select = (props) => {
             <span>{label}</span>
          </label>
          <select 
-            id={id} 
+            id={id}
+            value={formData[id]}
             className={className}
             disabled={disabled}
             onChange={handleSelect}

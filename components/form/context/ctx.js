@@ -3,8 +3,10 @@ import getCUIT from "/scripts/getCuit"
 
 export const FormCtx = createContext()
 
-export const FormCtxComponent = ({children}) => {
-   const [formData, setFormData] = useState({})
+export const FormCtxComponent = ({children, defaultData}) => {
+   const [formData, setFormData] = useState({
+      ...defaultData
+   })
 
    const handleInput = (e) => {
       const { id, value, type, checked } = e.target

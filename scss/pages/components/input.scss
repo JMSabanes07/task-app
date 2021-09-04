@@ -1,31 +1,60 @@
-.label{
-   display: grid;
-
-   margin-bottom: .5rem;
-   margin-top: 1rem;
-   &:first-of-type{
-      margin-top: 0;
-   }
-   span{
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.03rem;
-      color: #63666d;
-   }
-}
-
 .form{
+   display: grid;
+   gap: 1rem;
+
    width: 500px;
    .input-group{
       display: grid;
       gap: 0.5rem;
    }
    .container{
-      .input-txt{
+      .label{
+         display: grid;
+
+         margin-bottom: .5rem;
+         margin-top: 1rem;
+         &:first-of-type{
+            margin-top: 0;
+         }
+         span{
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.03rem;
+            color: #63666d;
+         }
+      }
+      .input-select, .input-txt{
          width: 100%;
          padding: .8rem 1rem;
          letter-spacing:0.02rem;
          font-size: 0.85rem;
+         background: white;
+         border: 1px solid rgb(167, 167, 167);
+         &::placeholder{
+            color: #858585;
+            opacity: 1;
+         }
+         &:disabled{
+            opacity: .4;
+         }
+      }
+      .input-select{
+         color:#858585;
+      }
+   }
+   .container.checkbox{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-areas: 'checkbox label' ;
+      align-content: center;
+      gap: .5rem;
+      .input-checkbox{
+         width: 15px;
+         grid-area: checkbox;
+      }
+      .label{
+         margin: 0;
+         grid-column: label;
       }
    }
 }

@@ -1,25 +1,45 @@
 import { Input, InputGroup, Form, Select, Radio } from "/components/form/form"
 
+const defaultData = {
+   nombre: "",
+   tipoDocumento: 1,
+   numero: '',
+   direccion: '',
+   ciudad: 1,
+   celular: '',
+   fijo: '',
+   email: '',
+   web: '',
+   condicionFiscal: 1,
+   vendedor: 1,
+   formaPago: 1,
+   habilitaCC: false,
+   limiteFacturacion: '',
+   transporte: 1,
+   empresa: '',
+   sucursal: 1,
+}
+
 const Clients = () => {
    
    return(
       <main className="clients-page">
          <section className="add-client">
-            <Form>
+            <Form defaultData={defaultData}>
                {/* nombre */}
                <Input data={{
                   label: "Nombre",
-                  id: "name",
+                  id: "nombre",
                   className: "input-txt",
                   type: "text",
                   placeholder: "Ingresa el nombre del cliente",
                }}/>
-               <InputGroup>
+               <InputGroup cols="1fr 2fr">
                   {/* tipo doc */}
                   <Select data={{
                      label: "Tipo de Documento",
                      id: "tipoDocumento",
-                     className: "input-txt",
+                     className: "input-select",
                      data:[
                         {
                            id: "1",
@@ -48,7 +68,7 @@ const Clients = () => {
                {/* direccion */}
                <Input data={{
                   label: "Dirección",
-                  id: "adress",
+                  id: "direccion",
                   className: "input-txt",
                   type: "text",
                   placeholder: "Ingresa la dirección del cliente",
@@ -57,7 +77,7 @@ const Clients = () => {
                <Select data={{
                   label: "Ciudad",
                   id: "ciudad",
-                  className: "input-txt",
+                  className: "input-select",
                   data: [
                      {
                         id: "1",
@@ -73,7 +93,7 @@ const Clients = () => {
                      },
                   ]
                }} />
-               <InputGroup>
+               <InputGroup cols="1fr 1fr">
                   {/* celular */}
                   <Input data={{
                      label: "Celular",
@@ -107,12 +127,12 @@ const Clients = () => {
                   type: "text",
                   placeholder: "Ingrese la pagina web"
                }} />
-               <InputGroup>
+               <InputGroup cols="1fr 1fr">
                   {/* cond fiscal */}
                   <Select data={{
                      label: "Condición Fiscal",
-                     id: "condicion",
-                     className: "input-txt",
+                     id: "condicionFiscal",
+                     className: "input-select",
                      data: [
                         {
                            id: "1",
@@ -132,7 +152,7 @@ const Clients = () => {
                   <Select data={{
                      label: "Vendedor",
                      id: "vendedor",
-                     className: "input-txt",
+                     className: "input-select",
                      data: [
                         {
                            id: "1",
@@ -149,29 +169,26 @@ const Clients = () => {
                      ]
                   }}/>
                </InputGroup>
-               <InputGroup>
-                  {/* form pago */}
-                  <Select data={{
-                     label: "Forma de pago",
-                     id: "formaPago",
-                     className: "input-txt",
-                     data: [
-                        {
-                           id: "1",
-                           opcion: "opcion 1"
-                        },
-                        {
-                           id: "2",
-                           opcion: "opcion 2"
-                        },
-                        {
-                           id: "3",
-                           opcion: "opcion 3"
-                        },
-                     ]
-                  }} />
-                  
-               </InputGroup>
+               {/* form pago */}
+               <Select data={{
+                  label: "Forma de pago",
+                  id: "formaPago",
+                  className: "input-select",
+                  data: [
+                     {
+                        id: "1",
+                        opcion: "opcion 1"
+                     },
+                     {
+                        id: "2",
+                        opcion: "opcion 2"
+                     },
+                     {
+                        id: "3",
+                        opcion: "opcion 3"
+                     },
+                  ]
+               }} />
                {/* bool cc */}
                <Input data={{
                   label: "Habilitar Cuenta Corriente",
@@ -187,12 +204,13 @@ const Clients = () => {
                   className: "input-txt",
                   type: "text",
                   placeholder: "Ingresa el límite de facturación",
+                  disabledBy: "habilitaCC"
                }} />
                {/* transporte */}
                <Select data={{
                   label: "Transporte",
                   id: "transporte",
-                  className: "input-txt",
+                  className: "input-select",
                   data: [
                      {
                         id: "1",
@@ -222,7 +240,7 @@ const Clients = () => {
                <Select data={{
                   label: "Sucursal",
                   id: "sucursal",
-                  className: "input-txt",
+                  className: "input-select",
                   data: [
                      {
                         id: "1",
